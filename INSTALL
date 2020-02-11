@@ -32,3 +32,14 @@ Install Footprints v.0.1
 ./configure
 make
 
+-------------------
+Installation Errors
+-------------------
+# If you recieve the following error during configure:
+configure: error: cannot find install-sh or install.sh in "." "./.." "./../.."
+
+# ...you may need to reinitialize 
+autoreconf -i
+
+# This requires automake, autoconf, and libtool so install these if you need to
+sudo apt-get install autoconf automake libtool 
