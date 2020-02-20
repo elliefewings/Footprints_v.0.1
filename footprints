@@ -196,21 +196,18 @@ else
   # Work through list of bams
   for file in $(ls ${bam}/*.bam) ; do
     
-    # Get full file path
-    path="$(pwd)/${file}"
-  
     # Exit if bam does not exist
-    if [ ! -f ${path} ]
+    if [ ! -f ${file} ]
       then
         echo ""
-        echo "Cannot find bam file: ${path}"
+        echo "Cannot find bam file: ${file}"
         abort
     fi
     echo ""
-    echo "Calculating footprint on file: ${path}"
+    echo "Calculating footprint on file: ${file}"
   
     #Calculate base pairs with minimum coverage
-    bp="$(${footprints} ${path} ${min} | awk '{$3=$2; print}' | tr ' ' '\t' | ${intersectBed} -a stdin -b ${int} | wc -l)"
+    bp="$(${footprints} ${file} ${min} | awk '{$3=$2; print}' | tr ' ' '\t' | ${intersectBed} -a stdin -b ${int} | wc -l)"
     
       # Test if calculating base pairs worked
     if [ ${bp} == "0" ]

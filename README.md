@@ -1,7 +1,6 @@
 # Footprints_v1
 
-### Footprints runs a c based tool, foots, that uses samtools to count the number of bases in your bam file
-### with a minimum coverage of your choice.
+### Footprints runs a c based tool, foots, that uses samtools to count the number of bases in your bam file with a minimum coverage of your choice.
 
 ##            Welcome to footprints
 
