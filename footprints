@@ -180,7 +180,8 @@ if [ -d ${bam} ] && [ $(ls -1 ${bam}/*.bam | wc -l) == "0" ]
 then
   echo "Selected directory contains no bam files: ${bam}"
   abort
-else
+elif [ -d ${bam} ] && [ $(ls -1 ${bam}/*.bam | wc -l) != "0" ]
+then
 # If directory contains bams, calculate footprint
   echo ""
   echo "Calculating footprint on multiple bams...(this may take some time)"
