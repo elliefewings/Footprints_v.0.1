@@ -22,6 +22,7 @@ To install please make sure you have the following requirements
 ### Requirements
 
 1. samtools-0.1.19
+2. bedtools
 
 If you don't have this version of samtools installed please follow steps below to install and add to path. 
 Otherwise skip to the next step.

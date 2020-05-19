@@ -93,7 +93,6 @@ tmp="./tmpFP"
 #Test for samtools and bedtools
 samtools=$(command -v samtools)
 bedtools=$(command -v bedtools)
-intersectBed="$(dirname ${bedtools})/intersectBed"
 footprints="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/foots"
 
 echo ""
@@ -108,16 +107,17 @@ fi
 echo ""
 
 if [ -z $bedtools ] ; then
-  echo "Can't find Bamtools. Please make sure this tool is installed and on the path"
+  echo "Can't find Bedtools. Please make sure this tool is installed and on the path"
   abort
 else
   echo -e "\t Using Bedtools: ${bedtools}"
+  intersectBed="$(dirname ${bedtools})/intersectBed"
 fi 
 
 echo ""
 
 if [ -z $intersectBed ] ; then
-  echo "Can't find Bamtools tool intersectBed. Please make sure Bamtools is installed and on the path"
+  echo "Can't find Bedtools tool intersectBed. Please make sure Bedtools is installed and on the path"
   abort
 else
   echo -e "\t Using intersectBed: ${intersectBed}"
